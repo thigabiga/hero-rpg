@@ -2,9 +2,6 @@
 
 import random
 import time
-from potions import *
-from magicitems import *
-from engine import *
 
 # CHARACTER CLASSES
 
@@ -26,7 +23,7 @@ class Character(object):
   def print_status(self):
     if self.alive():
       print(self.name)
-      print("Galleons: {}, Protection: {}, Knowledge: {}, Health: {}".format(self.galleons, self.protection, self.knowledge, self.health)
+      print("Galleons: {}, Protection: {}, Knowledge: {}, Health: {}".format(self.galleons, self.protection, self.knowledge, self.health))
       print("Items: {}".format(self.items))
       print("{} House Points: {}".format(self.house, self.house_points))
     else:
@@ -39,24 +36,20 @@ class Character(object):
 
   def receive_damage(self, enemy, extra_damage = 0):
     if self.alive():
-      damage = enemy.strength + extra_damage
+      damage = enemy.strength + extra_damage - self.protection
       self.health -= damage
       return damage
 
 class Potter(Character): #Hero
   def __init__(self):
     self.name = "Harry Potter"
-    self.health = 10
-    self.strength = 5
     self.galleons = 20
-    self.armor = 0
-    self.evade = 0
     self.wand = False
     self.house = ""
     self.items = []
     self.protection = 5
     self.knowledge = 1
-    self.agility = 1
+    self.health = 2
     self.house_points = 0
 
   def attack(self, enemy):
@@ -84,15 +77,22 @@ class Potter(Character): #Hero
       return damage
 
 class Draco(Character):
+  pass
 
 class Troll(Character):
+  pass
 
 class Quirrell(Character):
+  pass
 
 class Voldemort(Character):
+  pass
 
 class Keys(Character):
+  pass
 
 class Chess(Character):
-
+  pass
+  
 class Fluffy(Character):
+    pass

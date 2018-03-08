@@ -2,9 +2,6 @@
 
 import random
 import time
-from magicitems import *
-from character import *
-from engine import *
 
 # POTIONS AND SPELLS CLASSES
 
@@ -18,12 +15,13 @@ class Charms(object):
       print("1. Practice Charms")
       print("2. Go back to the hallway")        
     for item in items:
-      item.test(harry_potter)
-        elif keyinput == 2:
-          print("Bye.")
-        else:
-          print("Invalid input {}".format(input))
-          continue
+      if keyinput == 1:
+        item.test(harry_potter)
+      elif keyinput == 2:
+        print("Bye.")
+      else:
+        print("Invalid input {}".format(input))
+        continue
 
 class Potions(object):
   flag = False
@@ -60,11 +58,11 @@ class Spell(object):
     keyinput = input("> ")
     while tries < 6:
         if keyinput.lower() == item.name.lower():
-        flag = True
-        item.apply(harry_potter, tries)
+          flag = True
+          item.apply(harry_potter, tries)
         else:
-        tries += 1
-        print("Try again. > {}".format(input))
+          tries += 1
+          print("Try again. > {}".format(input))
     else:
         harry_potter.house_points -= 1
         print("Incorrect answer. Deduct 1 house point from {}.".format(harry_potter.house))
@@ -77,7 +75,7 @@ class Spell(object):
       print("You earn {} knowledge points for learning {}.".format(points_gained, self.name))
     else:
       harry_potter.knowledge += 1
-      print("You already answered this question."
+      print("You already answered this question.")
       print("You earn 1 knowledge point for practicing {}".format(self.name))
 
 

@@ -2,9 +2,6 @@
 
 import random
 import time
-from potions import *
-from character import *
-from engine import *
 
 # ITEM CLASSES
 

@@ -2,9 +2,10 @@
 
 import random
 import time
-from potions import *
-from magicitems import *
-from character import *
+
+import potions
+import magicitems
+import character
 
 # ENGINE CLASSES
 
@@ -79,11 +80,11 @@ class Riddle(object):
 
 class Requirement(object):
   flag = False
-  items = [Cloak(), Hogwarts_History(), Broom(), Sock(), Flute()]
+  items = [magicitems.Cloak(), magicitems.Hogwarts_History(), magicitems.Broom(), magicitems.Sock(), magicitems.Flute()]
   def find_items(self, harry_potter):
     print("\n- - - Welcome to the Room of Requirement - - -")
     print("- - - If you have to ask, you will never know. If you know, you need only ask - - -")
-    if flag = False:
+    if flag == False:
       while harry_potter.alive():
         flag = True
         print("What do you want to do?")
@@ -116,7 +117,7 @@ class Requirement(object):
 
 
 class DarkArts(object):
-
+  pass
 
 
 

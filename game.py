@@ -2,26 +2,27 @@
 
 import random
 import time
-from potions import *
-from magicitems import *
-from character import *
-from engine import *
+
+import potions
+import magicitems
+import character
+import engine
 
 # RUN GAME
 def run():
 
   # HERO
-  harry_potter = Potter()
+  harry_potter = character.Potter()
 
   # ENEMIES
-  enemies = [draco_malfoy = Draco(), troll = Troll(), 
-  quirrell = Quirrell(), fluffy = Fluffy(), flying_keys = Keys(), 
-  wizard_Chess = (chess), voldy = Voldemort(), neville = Neville()]
+  # enemies = [draco_malfoy = Draco(), troll = Troll(), 
+  # quirrell = Quirrell(), fluffy = Fluffy(), flying_keys = Keys(), 
+  # wizard_Chess = (chess), voldy = Voldemort(), neville = Neville()]
 
   # NAV MAP
-  gringotts = Gringotts()
-  ollivanders = Ollivanders()
-  requirement = Requirement()
+  gringotts = engine.Gringotts()
+  ollivanders = engine.Ollivanders()
+  requirement = engine.Requirement()
 
   # WIN FLAG
   win_flag = False
@@ -91,15 +92,14 @@ def run():
                   print("First years, this way to the Sorting Hat.")
                   print("The Sorting Hat says, \"You belong in Gryffindor, where dwell the brave at heart,")
                   print("Their daring, nerve and chivalry set Gryffindors apart.\"")
-                  harry_potter.house == "Gryffindor"
+                  harry_potter.house = "Gryffindor"
                 
                 else:
-                  print("You've already been sorted into Gryffindor.)
+                  print("You've already been sorted into Gryffindor.")
                   print("You have {} house points.".format(harry_potter.house_points))
 
               # CLASS
               elif keyinput == 2:
-                
                 pass
 
               # COORIDORS
