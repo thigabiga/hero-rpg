@@ -23,6 +23,10 @@ def run():
   gringotts = engine.Gringotts()
   ollivanders = engine.Ollivanders()
   requirement = engine.Requirement()
+    
+  # CLASS MAP
+  charms_class = potions.Charms()
+  #potions_class = potions.Potions()
 
   # WIN FLAG
   win_flag = False
@@ -73,7 +77,7 @@ def run():
           else:
 
             # RESET BANK FLAG
-            Gringotts.flag = False
+            gringotts.flag = False
 
             # HOGWARTS NAVIGATION
             while harry_potter.alive():
@@ -100,7 +104,7 @@ def run():
 
               # CLASS
               elif keyinput == 2:
-                pass
+                charms_class.practice_charms(harry_potter)
 
               # COORIDORS
               elif keyinput == 3:

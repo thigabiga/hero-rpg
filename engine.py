@@ -10,12 +10,14 @@ import character
 # ENGINE CLASSES
 
 class Gringotts(object):
-  flag = False
+  def __init__(self):
+    self.flag = False
+    #flag = False
 
   def get_money(self, harry_potter):
     print("\n- - - Welcome to Gringotts, the wizard bank. - - -")
     print("You have {} galleons in your pocket.".format(harry_potter.galleons))
-    if flag == False:
+    if self.flag == False:
       print("What do you want to do?")
       print("1. Withdraw 1 galleon.")
       print("2. Play a game to earn more galleons.")
@@ -24,6 +26,7 @@ class Gringotts(object):
         keyinput = int(input("> "))
         if keyinput == 1:
           harry_potter.galleons += 1
+          harry_potter.print_galleons()
           break
         elif keyinput == 2:
           gringotts_riddle = Riddle()
@@ -80,7 +83,7 @@ class Riddle(object):
 
 class Requirement(object):
   flag = False
-  items = [magicitems.Cloak(), magicitems.Hogwarts_History(), magicitems.Broom(), magicitems.Sock(), magicitems.Flute()]
+  items = [magicitems.Cloak(), magicitems.Hogwarts_History(), magicitems.Broom(), magicitems.Remembrall(), magicitems.Flute()]
   def find_items(self, harry_potter):
     print("\n- - - Welcome to the Room of Requirement - - -")
     print("- - - If you have to ask, you will never know. If you know, you need only ask - - -")

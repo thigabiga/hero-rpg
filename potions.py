@@ -6,23 +6,32 @@ import time
 # POTIONS AND SPELLS CLASSES
 
 class Charms(object):
-  flag = False
-  items = []
+  def __init__(self):
+    self.flag = False
+    self.items = [Wingardium_Leviosa(), Expelliarmus(), Alohamora(), Petrificus_Totalus(), Reparo(), Illuminate()]
+    #flag = False
+    #items = []
+    
   def practice_charms(self, harry_potter):
     print("\n- - - Welcome to Charms - - -")
-    if flag == False:
-      print("What do you want to do?")
-      print("1. Practice Charms")
-      print("2. Go back to the hallway")        
-    for item in items:
-      if keyinput == 1:
-        item.test(harry_potter)
-      elif keyinput == 2:
-        print("Bye.")
-      else:
-        print("Invalid input {}".format(input))
-        continue
+    if self.flag == False:
+      while harry_potter.alive():
+          print("What do you want to do?")
+          print("1. Practice Charms")
+          print("2. Go back to the hallway")
+          keyinput = int(input("> ")) 
+          if keyinput == 1:
+            for item in self.items:
+                item.test(harry_potter)
+                break
+          elif keyinput == 2:
+            print("Bye.")
+            break
+          else:
+            print("Invalid input {}".format(input))
+            continue
 
+"""
 class Potions(object):
   flag = False
   items = [Wingardium_Leviosa(), Expelliarmus(), Alohamora(), Petrificus_Totalus()]
@@ -43,7 +52,7 @@ class Potions(object):
           print("Bye.")
         else:
           print("Invalid input {}".format(input))
-          continue
+          continue"""
 
 class Spell(object):
   def __init__(self):
@@ -111,5 +120,5 @@ class Illuminate(Spell):
 
 class Wormwood(Spell):
   def __init(self):
-    self.name = ""
-    self.instructions = ""
+    self.name = "Wormwood"
+    self.instructions = "Clue for wormwood."

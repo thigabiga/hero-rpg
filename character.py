@@ -75,6 +75,10 @@ class Potter(Character): #Hero
         damage = enemy.strength + extra_damage - self.armor
       self.health -= damage
       return damage
+    
+  def print_galleons(self):
+      print("You have {} galleons in your pocket.".format(self.galleons))
+
 
 class Draco(Character):
   pass
