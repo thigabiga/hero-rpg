@@ -7,6 +7,7 @@ import potions
 import magicitems
 import character
 import engine
+import gringottsEngine
 
 # RUN GAME
 def run():
@@ -20,7 +21,7 @@ def run():
   # wizard_Chess = (chess), voldy = Voldemort(), neville = Neville()]
 
   # NAV MAP
-  gringotts = engine.Gringotts()
+  gringotts = gringottsEngine.Gringotts()
   ollivanders = engine.Ollivanders()
   requirement = engine.Requirement()
     
