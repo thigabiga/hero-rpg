@@ -32,7 +32,8 @@ class Gringotts(object):
 
         elif keyinput == 2:
           # PLAY A GUESS A NUMBER GAME
-          riddle_outcome = self.guess_a_number()
+          gringotts_riddle = Riddle()
+          riddle_outcome = gringotts_riddle.guess_a_number()
           
           if riddle_outcome == True and Riddle.tries == 1:
             # ADD TEN GALLEONS IF WIN ON FIRST TRY
@@ -62,7 +63,10 @@ class Gringotts(object):
     ###################### need to add time thing
     print("Gringotts goblins aren't the nicest of creatures. Better scurry!")
 
-
+class Riddle(object):
+  def __init__(self):
+    pass
+    
   def guess_a_number(self):
     tries = 0
     secret = random.randint(1, 10)
