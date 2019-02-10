@@ -86,4 +86,5 @@ class Riddle(object):
       else:
         print("Invalid input {}".format(input))
         continue
+
         
